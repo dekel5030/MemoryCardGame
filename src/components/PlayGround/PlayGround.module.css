@@ -1,0 +1,25 @@
+.playGround {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cardSelection {
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(1, 50vh);
+}
+
+.easy {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.medium {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.hard {
+  grid-template-columns: repeat(8, 1fr);
+}

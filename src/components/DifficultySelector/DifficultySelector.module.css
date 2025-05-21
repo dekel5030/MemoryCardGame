@@ -1,0 +1,24 @@
+.difficultySelector {
+  background-color: #4476cf;
+  font-family: "Press Start 2P", cursive;
+  border-radius: 12px;
+  border: 1px solid black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+}
+
+.difficultySelector .button {
+  width: 80%;
+  height: 80px;
+  background-color: #fbd844;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Press Start 2P", cursive;
+  transition: transform 0.1s ease-out;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
