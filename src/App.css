@@ -1,3 +1,7 @@
+:root {
+  font-family: "Press Start 2P", cursive;
+}
+
 .app {
   width: 96vw;
 }
@@ -20,7 +24,15 @@ img.logo:hover {
 }
 
 .score {
-  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #4585e3;
+  font-size: 2rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  width: 150px;
+  height: 120px;
 }
 
 .settings {
@@ -69,6 +81,12 @@ img.logo:hover {
   background-color: #6e8dc6;
 }
 
+.settings .left,
+.settings .right {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .difficultySelector {
   display: flex;
   flex-direction: column;
@@ -76,4 +94,43 @@ img.logo:hover {
   align-items: center;
   margin: 0 40%;
   gap: 5px;
+}
+
+.gameOver {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 40%;
+  gap: 1rem;
+  background-color: #4476cf;
+  font-family: "Press Start 2P", cursive;
+  border-radius: 12px;
+  border: 1px solid black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  text-align: center;
+}
+
+.gameOver button {
+  width: 80%;
+  height: 80px;
+  background-color: #fbd844;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Press Start 2P", cursive;
+  transition: transform 0.1s ease-out;
+}
+
+.gameOver button:active {
+  transform: scale(0.95);
+}
+
+.remainingCards {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }

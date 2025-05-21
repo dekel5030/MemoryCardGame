@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import styles from "./Card.module.css";
 import { fetchCharacter } from "../../services/dbManager.js";
 
-export default function Card({ id }) {
+export default function Card({ id, onClick }) {
   const [character, setCharacter] = useState(null);
   const cardRef = useRef(null);
 
@@ -25,6 +25,13 @@ export default function Card({ id }) {
     const rotateZ = (angle * (180 / Math.PI)) / 20;
 
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+
+    const glare = card.querySelector(`.${styles.glare}`);
+    if (glare) {
+      const percentX = (x / rect.width) * 100;
+      const percentY = (y / rect.height) * 100;
+      glare.style.background = `radial-gradient(circle at ${percentX}% ${percentY}%, rgba(255,255,255,0.4), transparent 60%)`;
+    }
   };
 
   const handleMouseLeave = () => {
@@ -53,7 +60,9 @@ export default function Card({ id }) {
       key={character.id}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onClick={onClick}
     >
+      <div className={styles.glare}></div>
       <img
         src={character.image}
         alt={character.name}
