@@ -104,11 +104,18 @@ function App() {
   }
 
   function GameOverScreen() {
+    function handleNoClick() {
+      const container = document.querySelector(".gameOver");
+      if (container) {
+        container.innerHTML = "<h3>Have a nice day!</h3>";
+      }
+    }
+
     return (
       <div className="gameOver">
         <h3>Would you like to do another game?</h3>
         <button onClick={resetGame}>Yes</button>
-        <button>No</button>
+        <button onClick={handleNoClick}>No</button>
       </div>
     );
   }
@@ -124,7 +131,12 @@ function App() {
   return (
     <div className="app">
       <header className="headerContainer">
-        <img src={dragonBallLogo} alt="" className="logo" />
+        <img
+          src={dragonBallLogo}
+          alt=""
+          className="logo"
+          onClick={() => setDifficulty(null)}
+        />
         <div className="score">
           <div className="currentScore">Score: {currentScore}</div>
           <div className="bestScore">best: {maxScore}</div>
